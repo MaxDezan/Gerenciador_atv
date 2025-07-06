@@ -4,25 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const seriesInput = document.getElementById('series');
   const repsInput = document.getElementById('reps');
 
-  nameInput.addEventListener('input', () => {
-    nameInput.value = nameInput.value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s]/g, '');
-    if (nameInput.value.trim() !== '') nameInput.classList.remove('invalid-input');
-  });
-
-  [seriesInput, repsInput].forEach(input => {
-    input.addEventListener('input', () => {
-      if (input.value.trim() !== '') input.classList.remove('invalid-input');
-    });
-  });
-
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = nameInput.value.trim();
     const series = seriesInput.value.trim();
     const reps = repsInput.value.trim();
-
-    clearValidation();
 
     const isValidName = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(name);
 
@@ -46,12 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     exercises.push(exercise);
     localStorage.setItem('exercises', JSON.stringify(exercises));
 
-    window.location.href = 'https://maxdezan.github.io/Gerenciador_atv/templates/listagem.html';
+    window.location.href = 'templates/listagem.html';
   });
-
-  function clearValidation() {
-    [nameInput, seriesInput, repsInput].forEach(input => {
-      input.classList.remove('invalid-input');
-    });
-  }
 });
