@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     exercises.push(exercise);
     localStorage.setItem('exercises', JSON.stringify(exercises));
 
-    window.location.href = 'templates/listagem.html';
+    window.location.href = 'https://maxdezan.github.io/Gerenciador_atv/templates/listagem.html';
   });
 
   function clearValidation() {
