@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     exercises.push(exercise);
     localStorage.setItem('exercises', JSON.stringify(exercises));
 
-    window.location.href = 'listagem.html';
+    window.location.href = './templates/listagem.html';
   });
 
   function clearValidation() {
